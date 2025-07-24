@@ -1,0 +1,22 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with a light grey color -->
+  <rect width="128" height="128" rx="24" fill="#F0F0F0"/>
+
+  <!-- Simplified GitLab Tanuki Logo -->
+  <!-- Outer shape (ears and top of head) -->
+  <path d="M64 24 L24 64 L44 84 L64 64 L84 84 L104 64 Z" fill="#E24329"/>
+  <!-- Inner face shape -->
+  <path d="M64 44 L44 64 L64 84 L84 64 Z" fill="#FC6D26"/>
+  <!-- Nose/Muzzle area -->
+  <path d="M64 64 L54 74 L64 84 L74 74 Z" fill="#FCA326"/>
+
+  <!-- Clock Hands overlaid on the logo -->
+  <g stroke="white" stroke-width="8" stroke-linecap="round">
+    <!-- Vertical hand (points to 12) -->
+    <path d="M64 64 V 40" />
+    <!-- Horizontal hand (points to 3) -->
+    <path d="M64 64 H 88" />
+  </g>
+  <!-- Center circle of the clock -->
+  <circle cx="64" cy="64" r="6" fill="white"/>
+</svg>

@@ -1,0 +1,28 @@
+name: Publish to Chrome Web Store
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install -g chrome-webstore-upload-cli
+
+      - name: Create Zip Archive
+        run: zip -r extension.zip . -x ".git*" ".github*" "*.svg"
+
+      - name: Upload to Chrome Web Store
+        run: |
+          chrome-webstore-upload upload --source extension.zip --extension-id YOUR_EXTENSION_ID --client-id ${{ secrets.CHROME_CLIENT_ID }} --client-secret ${{ secrets.CHROME_CLIENT_SECRET }} --refresh-token ${{ secrets.CHROME_REFRESH_TOKEN }}
